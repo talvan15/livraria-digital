@@ -1,17 +1,23 @@
+import { useRouter } from 'expo-router';
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function HomeScreen() {
+    const router = useRouter();
+
+    function goToTabs() {
+        router.push('./(tabs)');
+    }
     return(
         <View style={styles.container}>
             <View>
-                <Text style={styles.title}>Livraria Digital</Text>
+                <Text style={styles.title}>📚 Livraria Digital</Text>
             </View>
             <View>
                 <Text style={styles.text}>Descubra seu próximo livro favorito"</Text>
             </View>
 
-            <TouchableOpacity>
+            <TouchableOpacity style={styles.btn} onPress={goToTabs}>
                 <Text style={styles.text}>Explorar Livros</Text>
             </TouchableOpacity>
         </View>
