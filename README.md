@@ -1,50 +1,40 @@
-# Welcome to your Expo app 👋
+# 📚 Livraria Digital
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicativo desenvolvido em **React Native** com **Expo**, que simula uma livraria digital. O app permite listar categorias de livros e visualizar detalhes como título, autor, capa e descrição. 
 
-## Get started
+## 🧩 Tecnologias utilizadas
 
-1. Install dependencies
+- [React Native](https://reactnative.dev/)
+- [Expo](https://expo.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [FlatList](https://reactnative.dev/docs/flatlist) para renderização de listas
+- `Alert` do React Native para interações simples
 
-   ```bash
-   npm install
-   ```
+## 🔍 Funcionalidades
 
-2. Start the app
+- Exibição de categorias de livros com cores e contagem
+- Exibição de detalhes dos livros com título, autor e descrição
+- Navegação simples e intuitiva
+- Layout responsivo e estilizado
 
-   ```bash
-   npx expo start
-   ```
+## 📸 Capturas de tela
 
-In the output, you'll find options to open the app in a
+## 🏠 Tela de Inicial
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+![Tela Inicial](./assets/images/Home.png)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### 📚 Tela de Categorias
 
-## Get a fresh project
+![Tela de Categorias](./assets/images/category.png)
 
-When you're ready, run:
+### 📖 Tela de Livros
 
-```bash
-npm run reset-project
-```
+![Tela de Livros](./assets/images/livros.png)
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 👤 Detalhes de Perfil
 
-## Learn more
+![Tela do Perfil](./assets/images/profile.png)
 
-To learn more about developing your project with Expo, look at the following resources:
+### 📘 Detalhes do Livro
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+![Detalhes do Livro](./assets/images/)
