@@ -14,7 +14,7 @@ export default function HomeScreen() {
                 <Text style={styles.title}>📚 Livraria Digital</Text>
             </View>
             <View>
-                <Text style={styles.text}>Descubra seu próximo livro favorito"</Text>
+                <Text style={styles.text}>Descubra seu próximo livro favorito</Text>
             </View>
 
             <TouchableOpacity style={styles.btn} onPress={goToTabs}>

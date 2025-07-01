@@ -1,13 +1,16 @@
 import { MaterialIcons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import ReturnButton from "../components/returnButton";
+import { useRouter } from "expo-router";
 
 export default function TabBarLayout() {
   return (
     <Tabs
       screenOptions={{
-        // Cor da tab ativa
+        headerLeft: () => <ReturnButton />,
+        headerTitleAlign: 'center',
         tabBarStyle: {
-            borderTopWidth: 0, // Remove a borda superior
+            borderTopWidth: 0,
             elevation: 0,
             marginBottom: 10,
         },
@@ -20,7 +23,7 @@ export default function TabBarLayout() {
         },
       }}
     >
-      <Tabs.Screen
+      <Tabs.Screen 
         name="index"
         options={{
           title: "Livros",

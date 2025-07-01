@@ -1,9 +1,23 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
 
-export default function Page() {
+export default function profileScreen() {
+  interface Profile {
+    nome: string;
+    email: string;
+    estatisticas: [];
+  }
+
+  const person = [
+    {nome: "Jeferson queiroga"},
+    {email: "jeferson@livraria.com"},
+    {estatisticas:[{livrosLidos: 23}, {categoriaFavorita: "Romance"}, {livroslista: 5}]}
+  ]
+
   return (
     <View style={styles.container}>
-        <Text style={styles.text}> Perfil </Text>
+      <MaterialIcons name='person' size={30} />
+        
     </View>
   );
 }
@@ -13,7 +27,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#fff',
+        backgroundColor: '#F5FCFF',
     },
 
     text: {
