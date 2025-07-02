@@ -1,5 +1,13 @@
 import React from "react";
-import { FlatList, Image, StyleSheet, Text, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import { useRouter } from "expo-router";
 
 export default function bookScreen() {
   interface Book {
@@ -50,51 +58,68 @@ export default function bookScreen() {
       coverImage: "https://covers.openlibrary.org/b/olid/OL49829510M.jpg",
     },
     {
-    id: 5,
-    title: "O Pequeno Príncipe",
-    author: "Antoine de Saint-Exupéry",
-    category: "Infantil",
-    year: 1943,
-    description: "Uma fábula sobre amor, amizade e perda.",
-    coverImage: "https://covers.openlibrary.org/b/olid/OL35669163M.jpg",
-  },
-  {
-    id: 6,
-    title: "A Revolução dos Bichos",
-    author: "George Orwell",
-    category: "Fábula política",
-    year: 1945,
-    description: "Uma crítica ao totalitarismo disfarçada de conto animal.",
-    coverImage: "https://covers.openlibrary.org/b/olid/OL33019280M.jpg",
-  },
-  {
-    id: 7,
-    title: "Clean Code",
-    author: "Robert C. Martin",
-    category: "Tecnologia",
-    year: 2008,
-    description: "Um guia de boas práticas para escrever código limpo e eficiente.",
-    coverImage: "https://covers.openlibrary.org/b/olid/OL41866115M.jpg",
-  },
- 
+      id: 5,
+      title: "O Pequeno Príncipe",
+      author: "Antoine de Saint-Exupéry",
+      category: "Infantil",
+      year: 1943,
+      description: "Uma fábula sobre amor, amizade e perda.",
+      coverImage: "https://covers.openlibrary.org/b/olid/OL35669163M.jpg",
+    },
+    {
+      id: 6,
+      title: "A Revolução dos Bichos",
+      author: "George Orwell",
+      category: "Fábula política",
+      year: 1945,
+      description: "Uma crítica ao totalitarismo disfarçada de conto animal.",
+      coverImage: "https://covers.openlibrary.org/b/olid/OL33019280M.jpg",
+    },
+    {
+      id: 7,
+      title: "Clean Code",
+      author: "Robert C. Martin",
+      category: "Tecnologia",
+      year: 2008,
+      description:
+        "Um guia de boas práticas para escrever código limpo e eficiente.",
+      coverImage: "https://covers.openlibrary.org/b/olid/OL41866115M.jpg",
+    },
   ];
 
+  const router = useRouter();
   const renderItem = ({ item }: { item: Book }) => (
-    <View style={Styles.imageCard}>
-      <Image
-        source={{ uri: item.coverImage }}
-        style={Styles.bookCover}
-        resizeMode="contain"
-      />
-      <View style={Styles.contentCard}>
-        <Text style={{ fontWeight: "bold" }}>{item.title}</Text>
-        <Text>{item.author}</Text>
-        <Text>
-          {item.category} - {item.year}
-        </Text>
-        <Text>{item.description}</Text>
+    <TouchableOpacity
+      onPress={() =>
+        router.push({
+          pathname: "/book/[id]",
+          params: {
+            id: item.id.toString(),
+            title: item.title,
+            author: item.author,
+            year: item.year.toString(),
+            category: item.category,
+            description: item.description,
+          },
+        })
+      }
+    >
+      <View style={Styles.imageCard}>
+        <Image
+          source={{ uri: item.coverImage }}
+          style={Styles.bookCover}
+          resizeMode="contain"
+        />
+        <View style={Styles.contentCard}>
+          <Text style={{ fontWeight: "bold" }}>{item.title}</Text>
+          <Text>{item.author}</Text>
+          <Text>
+            {item.category} - {item.year}
+          </Text>
+          <Text>{item.description}</Text>
+        </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
   return (
     <View style={Styles.container}>
@@ -130,7 +155,6 @@ const Styles = StyleSheet.create({
     flexDirection: "column",
     marginLeft: 10,
   },
-
   bookCover: {
     width: 60,
     height: 90,

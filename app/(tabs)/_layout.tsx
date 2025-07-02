@@ -1,18 +1,18 @@
 import { MaterialIcons } from "@expo/vector-icons";
 import { Tabs } from "expo-router";
+import { View, StyleSheet} from "react-native";
 import ReturnButton from "../components/returnButton";
-import { useRouter } from "expo-router";
 
 export default function TabBarLayout() {
   return (
     <Tabs
       screenOptions={{
         headerLeft: () => <ReturnButton />,
-        headerTitleAlign: 'center',
+        headerTitleAlign: "center",
         tabBarStyle: {
-            borderTopWidth: 0,
-            elevation: 0,
-            marginBottom: 10,
+          borderTopWidth: 0,
+          elevation: 0,
+          marginBottom: 10,
         },
         headerShown: true,
         tabBarActiveTintColor: "#007BFF",
@@ -21,37 +21,38 @@ export default function TabBarLayout() {
           fontSize: 14,
           fontWeight: "bold",
         },
+        
       }}
     >
-      <Tabs.Screen 
-        name="index"
-        options={{
-          title: "Livros",
-          tabBarIcon: ({ color }) => (
-            <MaterialIcons name="book" size={24} color={color} />
-          ),
-        }}
-      />
+        <Tabs.Screen
+          name="index"
+          options={{
+            title: "Livros",
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="book" size={24} color={color} />
+            ),
+          }}
+        />
 
-      <Tabs.Screen
-        name="categories"
-        options={{
-          title: "Categorias",
-          tabBarIcon: ({ color }) => (
-            <MaterialIcons name="list" size={24} color={color} />
-          ),
-        }}
-      />
+        <Tabs.Screen
+          name="categories"
+          options={{
+            title: "Categorias",
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="list" size={24} color={color} />
+            ),
+          }}
+        />
 
-      <Tabs.Screen
-        name="profile"
-        options={{
-          title: "Perfil",
-          tabBarIcon: ({ color }) => (
-            <MaterialIcons name="person" size={24} color={color} />
-          ),
-        }}
-      />
+        <Tabs.Screen
+          name="profile"
+          options={{
+            title: "Perfil",
+            tabBarIcon: ({ color }) => (
+              <MaterialIcons name="person" size={24} color={color} />
+            ),
+          }}
+        />
     </Tabs>
   );
 }
